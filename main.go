@@ -28,8 +28,8 @@ func main() {
 			log.Println(err)
 			return
 		}
-		if (1 > a || a < 10) || (1 > b || b < 10) {
-			log.Println(fmt.Errorf("a = %v, b = %v, не выполняется условие 1 > x < 10", a, b))
+		if !((0 < a && a < 11) && (0 < b && b < 11)) {
+			log.Println(fmt.Errorf("a = %v, b = %v, не выполняется условие 0 > x < 11", a, b))
 			return
 		}
 
