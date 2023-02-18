@@ -29,7 +29,7 @@ func main() {
 			return
 		}
 		if !((0 < a && a < 11) && (0 < b && b < 11)) {
-			log.Println(fmt.Errorf("a = %v, b = %v, не выполняется условие 0 > x < 11", a, b))
+			log.Println(fmt.Errorf("a = %v, b = %v, не выполняется условие 0 < x < 11", a, b))
 			return
 		}
 
