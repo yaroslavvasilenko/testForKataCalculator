@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// define Arabic d and convert type to int
+// define Arabic digit and convert type to int
 func isArabic(a string) (int, bool) {
 	var isArDec = true
 	aInt, err := strconv.Atoi(a)
