@@ -18,19 +18,16 @@ func main() {
 		text = strings.TrimSpace(text)
 		textSlice := strings.Split(text, " ")
 		if len(textSlice) != 3 {
-			log.Println(fmt.Errorf(
+			log.Panic(fmt.Errorf(
 				"%s строка не является математической операцией или не удовлетворяет условию два операнда и один оператор (+, -, /, *)", textSlice))
-			return
 		}
 
 		a, b, isRoman, err := handlerRomanAndInt(textSlice[0], textSlice[2])
 		if err != nil {
-			log.Println(err)
-			return
+			log.Panic(err)
 		}
 		if !((0 < a && a < 11) && (0 < b && b < 11)) {
-			log.Println(fmt.Errorf("a = %v, b = %v, не выполняется условие 0 < x < 11", a, b))
-			return
+			log.Panic(fmt.Errorf("a = %v, b = %v, не выполняется условие 0 < x < 11", a, b))
 		}
 
 		var result int
@@ -44,14 +41,12 @@ func main() {
 			result = a * b
 		case "/":
 			if b == 0 {
-				log.Println(errors.New("делить на 0 нельзя"))
-				return
+				log.Panic(errors.New("делить на 0 нельзя"))
 			}
 			result = a / b
 
 		default:
-			log.Println(fmt.Errorf("оператор - %v недоступен, доступые: +, -, /, *", textSlice[1]))
-			return
+			log.Panic(fmt.Errorf("оператор - %v недоступен, доступые: +, -, /, *", textSlice[1]))
 		}
 
 		if isRoman {
