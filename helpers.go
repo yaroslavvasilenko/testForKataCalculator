@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// define Arabic digits and convert type to int
+// define Arabic d and convert type to int
 func isArabic(a string) (int, bool) {
 	var isArDec = true
 	aInt, err := strconv.Atoi(a)
@@ -44,7 +44,7 @@ func intToRoman(num int) string {
 	return roman.String()
 }
 
-// Arabic december switch to Roman december
+// Arabic digit switch to Roman digit
 func romanToInt(roman string) int {
 	translateRoman := map[byte]int{'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 	var decNum, tmpNum int
