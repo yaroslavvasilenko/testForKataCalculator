@@ -40,11 +40,7 @@ func main() {
 		case "*":
 			result = a * b
 		case "/":
-			if b == 0 {
-				log.Panic(errors.New("делить на 0 нельзя"))
-			}
 			result = a / b
-
 		default:
 			log.Panic(fmt.Errorf("оператор - %v недоступен, доступые: +, -, /, *", textSlice[1]))
 		}
