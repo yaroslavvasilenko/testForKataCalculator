@@ -49,6 +49,7 @@ func main() {
 			resultRoman, exception := romanToIntDefend(result)
 			if exception != nil {
 				fmt.Println(*exception)
+				continue
 			}
 			fmt.Println(resultRoman)
 		} else {
